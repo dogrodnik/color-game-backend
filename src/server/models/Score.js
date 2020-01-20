@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = require("mongoose");
 
-const Score = new Schema({
+const scoreSchema = new Schema({
   name: {
     type: String,
     required: true
