@@ -9,6 +9,10 @@ const scoreSchema = new Schema({
   time: {
     type: String,
     required: true
+  },
+  level: {
+    type: String,
+    required: true
   }
 });
 

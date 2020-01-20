@@ -7,8 +7,9 @@ exports.checkScores = async function(req, res) {
 
 exports.postScore = async function(req, res) {
   try {
-    const { id, time } = req.params;
+    const { level, id, time } = req.params;
     const scoreRecord = new Score({
+      level,
       name: id,
       time
     });
