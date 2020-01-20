@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
-const listController = require("../controllers/listController");
+const scoreController = require("../controllers/scoreController");
 
-router.get("/", listController.checkList);
+router.get("/scores", scoreController.checkScores);
+router.post("/scores/:id/:time", scoreController.postScore);
 
 module.exports = router;
