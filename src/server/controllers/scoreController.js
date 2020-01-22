@@ -1,10 +1,12 @@
 const Score = require("../models/Score");
+const helpers = require("../helpers/helpers");
 
 exports.checkScores = async function(req, res) {
   try {
     let { level } = req.params;
     const scores = await Score.find({ level });
-    res.send(scores);
+    const sortedScores = await helpers.sortRecords(scores);
+    res.send(sortedScores);
   } catch (err) {
     res.status(500).send("Internal server error...");
   }
