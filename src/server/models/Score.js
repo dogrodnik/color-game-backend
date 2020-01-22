@@ -7,7 +7,7 @@ const scoreSchema = new Schema({
     required: true
   },
   time: {
-    type: String,
+    type: Object,
     required: true
   },
   level: {

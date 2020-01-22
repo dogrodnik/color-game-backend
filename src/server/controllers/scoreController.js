@@ -4,7 +4,7 @@ exports.checkScores = async function(req, res) {
   try {
     let { level } = req.params;
     const scores = await Score.find({ level });
-    res.send(JSON.stringify(scores));
+    res.send(scores);
   } catch (err) {
     res.status(500).send("Internal server error...");
   }
@@ -12,7 +12,8 @@ exports.checkScores = async function(req, res) {
 
 exports.postScore = async function(req, res) {
   try {
-    const { level, id, time } = req.params;
+    const { level, id } = req.params;
+    const time = req.body;
     const record = await Score.find({ name: id });
     if (record.length) {
       res.status(409).send("Selected nickname is taken...");
