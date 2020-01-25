@@ -1,8 +1,9 @@
+const config = require("../config");
 const mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect("mongodb://localhost:27017/test3", {
+  .connect(config.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false

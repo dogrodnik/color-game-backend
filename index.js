@@ -1,8 +1,9 @@
-require("./src/server/database/database");
-
+const config = require("./src/server/config");
 const app = require("./src/server/server");
 
-const PORT = 7000;
+require("./src/server/database/database");
+
+const PORT = process.env.PORT || config.PORT;
 
 app.listen(PORT, () => {
   console.log("Server is listening...");
