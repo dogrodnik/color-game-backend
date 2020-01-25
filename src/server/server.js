@@ -4,11 +4,7 @@ const route = require("./routes/listRoute");
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://dogrodnik.github.io/color-game/"
-  })
-);
+app.use(cors());
 app.use(express.json());
 app.use("/", route);
 
